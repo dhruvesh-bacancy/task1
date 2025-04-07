@@ -38,7 +38,7 @@ jobs:
 
       - name: Run Tests Inside Docker Container
         run: |
-          docker run --rm -w /app my-app:latest python -m pytest
+          docker run --rm -w /app -e PYTHONPATH=/app my-app:latest python -m pytest
 
   push:
     runs-on: ubuntu-latest
